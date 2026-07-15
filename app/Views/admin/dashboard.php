@@ -1,3 +1,16 @@
+<?php
+$tableIcons = [
+    'hero_slides'    => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>',
+    'companies'      => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+    'services'       => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>',
+    'about_items'    => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>',
+    'gallery_photos' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>',
+    'stats'          => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>',
+    'testimonials'   => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
+    'site_settings'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>',
+    'admins'         => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>'
+];
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -5,15 +18,31 @@
     <meta charset="UTF-8">
     <title>Admin Panel - Kusuma Agrowisata</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="<?= base_url('assets/favicon.svg') ?>">
+
+    <!-- Google Fonts: Baloo 2 + Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
     <style>
         :root {
-            --green: #2e7d32;
-            --green-dark: #1b5e20;
-            --green-light: #e8f5e9;
-            --green-soft: #66bb6a;
-            --bg: #f4f7f3;
-            --text: #243027;
-            --border: #d7e4d7;
+            --green-bright: #62c94b;
+            --green-deep: #1f5b34;
+            --green-soft: #eaf8e6;
+            --green-mint: #d8f3d3;
+            --cream: #fbfdf8;
+            --white: #ffffff;
+            --apple-red: #e2543f;
+            --ink: #22331f;
+            --ink-soft: #5b6b56;
+            --shadow-soft: 0 16px 40px -20px rgba(31, 91, 52, 0.08);
+            --radius-lg: 16px;
+            --radius-md: 8px;
+            --font-display: "Baloo 2", "Segoe UI Rounded", sans-serif;
+            --font-body: "Nunito Sans", "Segoe UI", sans-serif;
         }
 
         * {
@@ -22,175 +51,361 @@
 
         body {
             margin: 0;
-            font-family: Segoe UI, Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
         }
 
         .layout {
             display: flex;
             min-height: 100vh;
+            min-height: 100dvh;
         }
 
+        /* Sidebar - Airy, modern off-white */
         .sidebar {
-            width: 230px;
-            background: var(--green-dark);
-            color: #fff;
-            padding: 20px 0;
+            width: 250px;
+            background: var(--white);
+            border-right: 1px solid #e2e8df;
+            padding: 32px 16px;
+            display: flex;
+            flex-direction: column;
             flex-shrink: 0;
         }
 
         .sidebar h2 {
-            font-size: 18px;
-            text-align: center;
-            margin: 0 0 20px;
-            padding: 0 10px;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--green-deep);
+            margin: 0 0 28px;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
         }
 
-        .sidebar a {
-            display: block;
-            color: #e8f5e9;
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--ink-soft);
             text-decoration: none;
-            padding: 12px 20px;
-            font-size: 14px;
-            border-left: 4px solid transparent;
+            padding: 11px 16px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .sidebar a:hover {
-            background: var(--green);
+        .sidebar-nav a svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
         }
 
-        .sidebar a.active {
-            background: var(--green);
-            border-left: 4px solid #a5d6a7;
-            font-weight: bold;
+        .sidebar-nav a:hover {
+            background: var(--green-soft);
+            color: var(--green-deep);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--green-soft);
+            color: var(--green-deep);
         }
 
         .sidebar .logout {
+            border-top: 1px solid #e2e8df;
+            padding-top: 20px;
             margin-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, .2);
-            padding-top: 15px;
         }
 
+        .logout-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--apple-red);
+            text-decoration: none;
+            padding: 11px 16px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+
+        .logout-link svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .logout-link:hover {
+            background: rgba(226, 84, 63, 0.05);
+        }
+
+        /* Main Content */
         .main {
             flex: 1;
-            padding: 25px 30px;
+            padding: 40px 48px;
+            overflow-x: hidden;
         }
 
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
+            gap: 16px;
         }
 
         .topbar h1 {
-            font-size: 22px;
-            color: var(--green-dark);
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--green-deep);
             margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
         .btn {
-            display: inline-block;
-            background: var(--green);
-            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--green-deep);
+            color: var(--white);
             border: none;
-            padding: 9px 16px;
-            border-radius: 6px;
+            padding: 11px 20px;
+            border-radius: var(--radius-md);
             cursor: pointer;
-            font-size: 14px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.92rem;
             text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            outline: none;
         }
 
         .btn:hover {
-            background: var(--green-dark);
+            background: var(--green-bright);
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
         }
 
         .btn-edit {
-            background: #66bb6a;
+            background: #f1f5f0;
+            color: var(--green-deep);
         }
 
         .btn-edit:hover {
-            background: var(--green);
+            background: var(--green-deep);
+            color: var(--white);
         }
 
         .btn-del {
-            background: #e53935;
+            background: #fdf2f1;
+            color: var(--apple-red);
         }
 
         .btn-del:hover {
-            background: #b71c1c;
+            background: var(--apple-red);
+            color: var(--white);
         }
 
         .btn-sm {
-            padding: 6px 10px;
-            font-size: 12px;
-            margin-right: 5px;
+            padding: 6px 12px;
+            font-size: 0.82rem;
+            border-radius: 6px;
+            font-weight: 600;
         }
 
+        /* Alert notifications */
         .alert {
-            background: var(--green-light);
-            border: 1px solid var(--green-soft);
-            color: var(--green-dark);
-            padding: 10px 15px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 14px;
+            background: var(--green-soft);
+            border: 1px solid rgba(98, 201, 75, 0.15);
+            color: var(--green-deep);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            margin-bottom: 28px;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(31, 91, 52, 0.03);
         }
 
         .alert-error {
-            background: #fdecea;
-            border-color: #f5c6cb;
-            color: #c62828;
+            background: rgba(226, 84, 63, 0.05);
+            border-color: rgba(226, 84, 63, 0.15);
+            color: var(--apple-red);
         }
 
+        /* Responsive Card and Modern Tables */
         .card {
-            background: #fff;
-            border-radius: 10px;
-            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid #e2e8df;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .table-responsive {
             overflow-x: auto;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            width: 100%;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 0.88rem;
+            letter-spacing: -0.01em;
         }
 
         th,
         td {
-            padding: 10px 12px;
+            padding: 16px 20px;
             text-align: left;
-            border-bottom: 1px solid var(--border);
-            max-width: 260px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        th {
-            background: var(--green-light);
-            color: var(--green-dark);
-        }
-
-        tr:hover td {
-            background: #fafffa;
-        }
-
-        img.thumb {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 5px;
+            border-bottom: 1px solid #edf2eb;
             vertical-align: middle;
         }
 
+        th {
+            background: #f8faf7;
+            color: var(--ink-soft);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid #e2e8df;
+        }
+
+        /* Subtly alternate row colors for easier scanning in lists */
+        tbody tr:nth-child(even) td {
+            background-color: #fafbfa;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover td {
+            background-color: #f3f7f2 !important;
+        }
+
+        /* Text constraints inside tables to prevent row blowout */
+        .td-text {
+            display: block;
+            max-width: 280px;
+            word-wrap: break-word;
+            white-space: normal;
+            line-height: 1.5;
+            color: var(--ink);
+        }
+
+        .td-id {
+            font-family: monospace;
+            font-weight: 600;
+            color: var(--ink-soft);
+            width: 60px;
+            text-align: center;
+        }
+
+        th.th-id {
+            text-align: center;
+            width: 60px;
+        }
+
+        .td-actions {
+            text-align: center;
+            white-space: nowrap;
+            width: 150px;
+        }
+
+        th.th-actions {
+            text-align: center;
+            width: 150px;
+        }
+
+        /* Thumbnails for standard items (e.g. logos) */
+        img.thumb {
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e2e8df;
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            background: #fff;
+        }
+
+        /* Dynamic Landscape preview for Hero Slides */
+        img.thumb-slide {
+            width: 80px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #e2e8df;
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Single settings sheet layout */
+        .settings-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .settings-table tr {
+            border-bottom: 1px solid #edf2eb;
+        }
+
+        .settings-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .settings-table th {
+            width: 240px;
+            background: #f8faf7;
+            color: var(--green-deep);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 18px 24px;
+            vertical-align: top;
+            border-bottom: none;
+            border-right: 1px solid #e2e8df;
+        }
+
+        .settings-table td {
+            padding: 18px 24px;
+            vertical-align: middle;
+            background: var(--white);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        /* Modal styling - Glassmorphic overlay & sleek popup */
         .modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(34, 51, 31, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
             z-index: 100;
@@ -201,27 +416,50 @@
         }
 
         .modal {
-            background: #fff;
+            background: var(--white);
             width: 100%;
             max-width: 520px;
-            max-height: 88vh;
+            max-height: 85vh;
             overflow-y: auto;
-            border-radius: 10px;
-            padding: 22px 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            border-radius: var(--radius-lg);
+            border: 1px solid #e2e8df;
+            padding: 36px;
+            box-shadow: 0 24px 64px -16px rgba(31, 91, 52, 0.15);
             position: relative;
+            box-sizing: border-box;
+            animation: modalReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.97) translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         .modal h3 {
-            margin-top: 0;
-            color: var(--green-dark);
+            margin: 0 0 24px;
+            font-family: var(--font-display);
+            color: var(--green-deep);
+            font-size: 1.35rem;
+            font-weight: 700;
         }
 
         .modal label {
             display: block;
-            font-size: 13px;
-            margin: 12px 0 5px;
-            color: #444;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin: 18px 0 6px;
+            color: var(--green-deep);
+        }
+
+        .modal label:first-of-type {
+            margin-top: 0;
         }
 
         .modal input[type=text],
@@ -229,39 +467,68 @@
         .modal input[type=password],
         .modal textarea {
             width: 100%;
-            padding: 8px 10px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: inherit;
+            padding: 11px 13px;
+            border: 1px solid #ccd3c7;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-family: var(--font-body);
+            color: var(--ink);
+            box-sizing: border-box;
+            outline: none;
+            background: var(--white);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal input[type=text]:focus,
+        .modal input[type=number]:focus,
+        .modal input[type=password]:focus,
+        .modal textarea:focus {
+            border-color: var(--green-deep);
+            box-shadow: 0 0 0 3px rgba(31, 91, 52, 0.08);
         }
 
         .modal textarea {
             resize: vertical;
-            min-height: 70px;
+            min-height: 80px;
+        }
+
+        .modal input[type=file] {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--ink-soft);
+            margin-top: 4px;
         }
 
         .modal img.preview {
-            max-width: 130px;
+            max-width: 120px;
+            max-height: 120px;
             display: none;
-            margin-bottom: 8px;
-            border-radius: 6px;
+            margin: 8px 0 12px;
+            border-radius: 8px;
+            border: 1px solid #e2e8df;
+            object-fit: cover;
         }
 
         .modal-actions {
-            margin-top: 18px;
+            margin-top: 32px;
             display: flex;
             justify-content: flex-end;
-            gap: 8px;
+            gap: 12px;
         }
 
         .close-btn {
             position: absolute;
-            top: 14px;
-            right: 18px;
+            top: 24px;
+            right: 24px;
             cursor: pointer;
-            font-size: 20px;
-            color: #888;
+            font-size: 24px;
+            line-height: 1;
+            color: var(--ink-soft);
+            transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--apple-red);
         }
 
         @media(max-width:768px) {
@@ -271,25 +538,45 @@
 
             .sidebar {
                 width: 100%;
-                display: flex;
-                overflow-x: auto;
-                padding: 10px;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid #e2e8df;
             }
 
             .sidebar h2 {
-                display: none;
+                margin: 0 0 16px;
             }
 
-            .sidebar a {
+            .sidebar-nav {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 8px;
+            }
+
+            .sidebar-nav a {
                 white-space: nowrap;
-                padding: 10px 14px;
-                border-left: none;
-                border-bottom: 3px solid transparent;
+                padding: 8px 12px;
             }
 
-            .sidebar a.active {
-                border-left: none;
-                border-bottom: 3px solid #a5d6a7;
+            .sidebar .logout {
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: none;
+            }
+
+            .main {
+                padding: 24px;
+            }
+
+            .settings-table th {
+                width: auto;
+                border-right: none;
+                border-bottom: 1px solid #e2e8df;
+            }
+
+            .settings-table tr {
+                display: flex;
+                flex-direction: column;
             }
         }
     </style>
@@ -298,101 +585,157 @@
 <body>
     <div class="layout">
 
+        <!-- Sidebar Navigation -->
         <div class="sidebar">
             <h2>🌿 Kusuma Admin</h2>
-            <?php foreach ($tables as $key => $t): ?>
-                <a href="<?= base_url('admin/' . $key) ?>" class="<?= $key === $activeTable ? 'active' : '' ?>">
-                    <?= esc($t['label']) ?>
-                </a>
-            <?php endforeach; ?>
+            <nav class="sidebar-nav">
+                <?php foreach ($tables as $key => $t): ?>
+                    <a href="<?= base_url('admin/' . $key) ?>" class="<?= $key === $activeTable ? 'active' : '' ?>">
+                        <?= $tableIcons[$key] ?? '' ?>
+                        <span><?= esc($t['label']) ?></span>
+                    </a>
+                <?php endforeach; ?>
+            </nav>
             <div class="logout">
-                <a href="<?= base_url('logout') ?>">🚪 Logout (<?= esc($username) ?>)</a>
+                <a href="<?= base_url('logout') ?>" class="logout-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path>
+                    </svg>
+                    <span>Logout (<?= esc($username) ?>)</span>
+                </a>
             </div>
         </div>
 
+        <!-- Main Panel Content -->
         <div class="main">
             <div class="topbar">
                 <h1><?= esc($conf['label']) ?></h1>
                 <?php if (empty($conf['single'])): ?>
-                    <button class="btn" onclick="openAddModal()">+ Tambah Data</button>
+                    <button class="btn" onclick="openAddModal()">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Tambah Data</span>
+                    </button>
                 <?php else: ?>
-                    <button class="btn" onclick='openEditModal(<?= json_encode($rows[0] ?? [], JSON_HEX_APOS | JSON_HEX_QUOT) ?>)'>Edit Pengaturan</button>
+                    <button class="btn" onclick='openEditModal(<?= json_encode($rows[0] ?? [], JSON_HEX_APOS | JSON_HEX_QUOT) ?>)'>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                        <span>Edit Pengaturan</span>
+                    </button>
                 <?php endif; ?>
             </div>
 
+            <!-- Flashdata notifications -->
             <?php if (session()->getFlashdata('success')): ?>
-                <div class="alert"><?= esc(session()->getFlashdata('success')) ?></div>
+                <div class="alert">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span><?= esc(session()->getFlashdata('success')) ?></span>
+                </div>
             <?php endif; ?>
             <?php if (session()->getFlashdata('error')): ?>
-                <div class="alert alert-error"><?= esc(session()->getFlashdata('error')) ?></div>
+                <div class="alert alert-error">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span><?= esc(session()->getFlashdata('error')) ?></span>
+                </div>
             <?php endif; ?>
 
+            <!-- Table or Form Display -->
             <?php if (! empty($conf['single'])): ?>
-                <div class="card" style="padding:20px;">
-                    <table>
-                        <?php foreach ($conf['columns'] as $field => $meta): ?>
-                            <tr>
-                                <th style="width:220px;"><?= esc($meta['label']) ?></th>
-                                <td style="white-space:normal;">
-                                    <?php if ($meta['type'] === 'image' && ! empty($rows[0][$field])): ?>
-                                        <img class="thumb" src="<?= base_url($rows[0][$field]) ?>" alt="">
-                                    <?php else: ?>
-                                        <?= esc((string) ($rows[0][$field] ?? '')) ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-            <?php else: ?>
                 <div class="card">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <?php foreach ($conf['columns'] as $field => $meta): ?>
-                                    <?php if ($field === 'password') continue; ?>
+                    <div class="table-responsive">
+                        <table class="settings-table">
+                            <?php foreach ($conf['columns'] as $field => $meta): ?>
+                                <tr>
                                     <th><?= esc($meta['label']) ?></th>
-                                <?php endforeach; ?>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (count($rows) === 0): ?>
-                                <tr>
-                                    <td colspan="10" style="text-align:center;color:#999;">Belum ada data.</td>
-                                </tr>
-                            <?php endif; ?>
-                            <?php foreach ($rows as $row): ?>
-                                <tr>
-                                    <td><?= esc($row[$conf['pk']]) ?></td>
-                                    <?php foreach ($conf['columns'] as $field => $meta): ?>
-                                        <?php if ($field === 'password') continue; ?>
-                                        <td>
-                                            <?php if ($meta['type'] === 'image' && ! empty($row[$field])): ?>
-                                                <img src="<?= base_url($row[$field]) ?>" class="thumb" alt="">
-                                            <?php elseif ($meta['type'] === 'textarea'): ?>
-                                                <?= esc(mb_strimwidth((string) ($row[$field] ?? ''), 0, 60, '...')) ?>
-                                            <?php else: ?>
-                                                <?= esc((string) ($row[$field] ?? '')) ?>
-                                            <?php endif; ?>
-                                        </td>
-                                    <?php endforeach; ?>
                                     <td>
-                                        <button class="btn btn-edit btn-sm" onclick='openEditModal(<?= json_encode($row, JSON_HEX_APOS | JSON_HEX_QUOT) ?>)'>Edit</button>
-                                        <a class="btn btn-del btn-sm"
-                                            href="<?= base_url('admin/' . $activeTable . '/hapus/' . $row[$conf['pk']]) ?>"
-                                            onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                                        <?php if ($meta['type'] === 'image' && ! empty($rows[0][$field])): ?>
+                                            <img class="thumb" src="<?= base_url($rows[0][$field]) ?>" alt="">
+                                        <?php else: ?>
+                                            <div style="max-width: 700px; word-wrap: break-word; white-space: normal;">
+                                                <?= esc((string) ($rows[0][$field] ?? '')) ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                        </table>
+                    </div>
+                </div>
+            <?php else: ?>
+                <div class="card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="th-id">ID</th>
+                                    <?php foreach ($conf['columns'] as $field => $meta): ?>
+                                        <?php if ($field === 'password') continue; ?>
+                                        <th><?= esc($meta['label']) ?></th>
+                                    <?php endforeach; ?>
+                                    <th class="th-actions">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (count($rows) === 0): ?>
+                                    <tr>
+                                        <td colspan="10" style="text-align:center;color:var(--ink-soft); padding: 32px;">Belum ada data.</td>
+                                    </tr>
+                                <?php endif; ?>
+                                <?php foreach ($rows as $row): ?>
+                                    <tr>
+                                        <td class="td-id"><?= esc($row[$conf['pk']]) ?></td>
+                                        <?php foreach ($conf['columns'] as $field => $meta): ?>
+                                            <?php if ($field === 'password') continue; ?>
+                                            <td>
+                                                <?php if ($meta['type'] === 'image' && ! empty($row[$field])): ?>
+                                                    <?php if ($activeTable === 'hero_slides'): ?>
+                                                        <!-- Widescreen preview for banners -->
+                                                        <img src="<?= str_starts_with($row[$field], 'http') ? $row[$field] : base_url($row[$field]) ?>" class="thumb-slide" alt="">
+                                                    <?php else: ?>
+                                                        <!-- Square preview for other assets -->
+                                                        <img src="<?= str_starts_with($row[$field], 'http') ? $row[$field] : base_url($row[$field]) ?>" class="thumb" alt="">
+                                                    <?php endif; ?>
+                                                <?php elseif ($meta['type'] === 'textarea'): ?>
+                                                    <span class="td-text">
+                                                        <?= esc(mb_strimwidth((string) ($row[$field] ?? ''), 0, 100, '...')) ?>
+                                                    </span>
+                                                <?php else: ?>
+                                                    <span class="td-text">
+                                                        <?= esc((string) ($row[$field] ?? '')) ?>
+                                                    </span>
+                                                <?php endif; ?>
+                                            </td>
+                                        <?php endforeach; ?>
+                                        <td class="td-actions">
+                                            <div style="display: flex; justify-content: center; gap: 8px;">
+                                                <button class="btn btn-edit btn-sm" onclick='openEditModal(<?= json_encode($row, JSON_HEX_APOS | JSON_HEX_QUOT) ?>)'>Edit</button>
+                                                <a class="btn btn-del btn-sm"
+                                                    href="<?= base_url('admin/' . $activeTable . '/hapus/' . $row[$conf['pk']]) ?>"
+                                                    onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
     </div>
 
+    <!-- Modal Form (Sleek Glassmorphic Overlay) -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -407,7 +750,7 @@
                         <img class="preview" id="preview_<?= $field ?>" src="" alt="">
                         <input type="file" name="<?= $field ?>" id="field_<?= $field ?>" accept="image/*"
                             onchange="previewImage(this, 'preview_<?= $field ?>')">
-                        <small style="color:#888;display:block;">Kosongkan kalau tidak ingin ganti gambar.</small>
+                        <small style="color:var(--ink-soft);display:block;margin-top:4px;">Kosongkan jika tidak ingin ganti gambar.</small>
 
                     <?php elseif ($meta['type'] === 'textarea'): ?>
                         <textarea name="<?= $field ?>" id="field_<?= $field ?>"></textarea>
@@ -488,7 +831,11 @@
                 if (el.type === 'file') {
                     const preview = document.getElementById('preview_' + key);
                     if (preview && data[key]) {
-                        preview.src = BASE_URL + data[key];
+                        if (data[key].startsWith('http')) {
+                            preview.src = data[key];
+                        } else {
+                            preview.src = BASE_URL + data[key];
+                        }
                         preview.style.display = 'block';
                     }
                 } else if (el.type !== 'password') {

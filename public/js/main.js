@@ -1,5 +1,41 @@
 (() => {
   const C = SITE_CONTENT;
+  let lenisInstance;
+
+  /* =====================================================================
+     0. LENIS SMOOTH SCROLL (Awwwards-style momentum scroll)
+     ===================================================================== */
+  if (typeof Lenis !== "undefined") {
+    lenisInstance = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing eksponensial halus
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenisInstance.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Integrasi dengan klik navigasi internal (spy & scroll-to)
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          lenisInstance.scrollTo(targetEl, {
+            offset: -70, // Menghindari ketutup header navbar
+            duration: 1.6,
+            easing: (t) => 1 - Math.pow(1 - t, 4), // Easing easeOutQuart (cepat ke lambat secara dramatis)
+          });
+        }
+      });
+    });
+  }
 
   /* ---------- Kumpulan ikon garis sederhana (SVG), tanpa perlu internet ---------- */
   const ICONS = {
@@ -243,20 +279,46 @@
      5. OUR COMPANIES — kartu klik langsung buka website resmi
      ===================================================================== */
   const companyGrid = document.getElementById("company-grid");
-  companyGrid.innerHTML = C.companies
-    .map(
-      (co) => `
-    <a class="company-card reveal" href="${co.link}" target="_blank" rel="noopener">
-      <div class="bg" style="background-image:url('${co.image}')"></div>
-      <div class="company-body">
-        <div class="company-icon">${svg(co.icon)}</div>
-        <h3>${co.name}</h3>
-        <p>${co.desc}</p>
-        <span class="company-link">Kunjungi Website ${svg("arrow", 'width="15" height="15"')}</span>
-      </div>
-    </a>`,
-    )
-    .join("");
+  if (companyGrid && C.companies) {
+    companyGrid.innerHTML = C.companies
+      .map((co, idx) => {
+        let spanClass = "span-3";
+        let layoutClass = "";
+        if (idx === 0) spanClass = "span-2";
+        if (idx === 1) spanClass = "span-4";
+        if (idx === 2) spanClass = "span-3";
+        if (idx === 3) spanClass = "span-3";
+        if (idx === 4) {
+          spanClass = "span-6";
+          layoutClass = "layout-horizontal";
+        }
+
+        if (layoutClass === "layout-horizontal") {
+          return `
+            <a class="company-card ${spanClass} ${layoutClass} reveal" href="${co.link}" target="_blank" rel="noopener">
+              <div class="company-body">
+                <div class="company-icon">${svg(co.icon)}</div>
+                <h3>${co.name}</h3>
+                <p>${co.desc}</p>
+                <span class="company-link">Kunjungi Website ${svg("arrow", 'width="15" height="15"')}</span>
+              </div>
+              <div class="bg" style="background-image:url('${co.image}')"></div>
+            </a>`;
+        } else {
+          return `
+            <a class="company-card ${spanClass} reveal" href="${co.link}" target="_blank" rel="noopener">
+              <div class="bg" style="background-image:url('${co.image}')"></div>
+              <div class="company-body">
+                <div class="company-icon">${svg(co.icon)}</div>
+                <h3>${co.name}</h3>
+                <p>${co.desc}</p>
+                <span class="company-link">Kunjungi Website ${svg("arrow", 'width="15" height="15"')}</span>
+              </div>
+            </a>`;
+        }
+      })
+      .join("");
+  }
 
   /* =====================================================================
      6. SERVICES — klik kartu untuk membuka galeri foto pop-up
@@ -346,6 +408,8 @@
     if (e.target.tagName === "BUTTON")
       goToModal([...modalDots.children].indexOf(e.target));
   });
+
+
 
   /* =====================================================================
      7. ABOUT US — Founder / Sejarah / Masa Depan
@@ -463,9 +527,13 @@
     () => fabTop.classList.toggle("show", window.scrollY > 500),
     { passive: true },
   );
-  fabTop.addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: "smooth" }),
-  );
+  fabTop.addEventListener("click", () => {
+    if (lenisInstance) {
+      lenisInstance.scrollTo(0);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
 
   /* =====================================================================
      14. ANIMASI MUNCUL SAAT DI-SCROLL

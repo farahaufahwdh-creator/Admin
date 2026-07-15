@@ -131,6 +131,7 @@ $content = [
         ];
     }, $testimonials),
 
+
     'footer' => [
         'about'         => $settings['footer_about'] ?? '',
         'copyrightName' => $settings['footer_copyright_name'] ?? '',

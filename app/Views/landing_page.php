@@ -11,11 +11,11 @@
         name="description"
         content="Kusuma Agrowisata Group: wisata petik buah, hotel resort, waterpark, estate, dan produk olahan apel asli Kota Batu sejak 1989." />
 
-    <!-- Font: Baloo 2 (judul, hangat & ramah) + Nunito Sans (teks, mudah dibaca) -->
+    <!-- Font: Plus Jakarta Sans (judul, premium & profesional) + Nunito Sans (teks, mudah dibaca) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -57,7 +57,7 @@
             <a href="#hero">Home</a>
             <a href="#companies">Company</a>
             <a href="#services">Services</a>
-            <a href="#about">About</a>
+            <a href="#about">About Us</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -112,7 +112,7 @@
             <div class="hero-wave">
                 <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
                     <path
-                        fill="#fbfdf8"
+                        fill="var(--cream)"
                         d="M0,64 C240,10 480,10 720,40 C960,70 1200,90 1440,50 L1440,90 L0,90 Z" />
                 </svg>
             </div>
@@ -161,7 +161,7 @@
                             width="18"
                             height="18"
                             fill="none"
-                            stroke="#1f5b34"
+                            stroke="var(--green-deep)"
                             stroke-width="2"
                             stroke-linecap="round">
                             <path d="M6 6l12 12" />
@@ -201,6 +201,18 @@
             </div>
         </div>
 
+        <!--GALLERY-->
+        <section id="gallery" class="section-pad">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Photo Gallery</span>
+                    <h2>Momen Keseruan di Kusuma</h2>
+                    <p id="gallery-subtitle"></p>
+                </div>
+                <div id="gallery-grid" class="gallery-grid"></div>
+            </div>
+        </section>
+
         <!--ABOUT US-->
         <section id="about" class="section-pad about-path">
             <div class="container">
@@ -213,7 +225,7 @@
                     <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path
                             d="M0,30 C300,-10 300,70 600,30 C900,-10 900,70 1200,30"
-                            stroke="#c7ecc0"
+                            stroke="var(--green-mint)"
                             stroke-width="3"
                             fill="none"
                             stroke-dasharray="2 14"
@@ -221,18 +233,6 @@
                     </svg>
                 </div>
                 <div id="about-grid" class="about-grid"></div>
-            </div>
-        </section>
-
-        <!--GALLERY -->
-        <section id="gallery" class="section-pad">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Photo Gallery</span>
-                    <h2>Fun Moments at Kusuma</h2>
-                    <p id="gallery-subtitle"></p>
-                </div>
-                <div id="gallery-grid" class="gallery-grid"></div>
             </div>
         </section>
 
@@ -304,8 +304,9 @@
                 <h4>Jelajahi</h4>
                 <a href="#companies">Our Company</a>
                 <a href="#services">Services</a>
+                <a href="#team">Our Team</a>
+                <a href="#media">Media &amp; Gallery</a>
                 <a href="#about">About Us</a>
-                <a href="#gallery">Gallery</a>
             </div>
             <div class="footer-links">
                 <h4>Perusahaan</h4>
@@ -351,6 +352,7 @@
     </div>
 
     <script src="js/content.php"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

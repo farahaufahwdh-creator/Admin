@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db   = 'kusuma_admin';
 $user = 'root';
-$pass = '';
+$pass = 'femas12';
 
 try {
     $pdo = new PDO(

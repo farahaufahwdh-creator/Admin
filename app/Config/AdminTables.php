@@ -123,6 +123,7 @@ class AdminTables
                     'footer_copyright_name' => ['label' => 'Nama Copyright', 'type' => 'text'],
                 ],
             ],
+
             'admins' => [
                 'label'    => 'Admins',
                 'pk'       => 'id',
