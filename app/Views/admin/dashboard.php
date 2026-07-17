@@ -18,7 +18,7 @@ $tableIcons = [
     <meta charset="UTF-8">
     <title>Admin Panel - Kusuma Agrowisata</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= base_url('assets/favicon.svg') ?>">
 
@@ -435,6 +435,7 @@ $tableIcons = [
                 opacity: 0;
                 transform: scale(0.97) translateY(8px);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);

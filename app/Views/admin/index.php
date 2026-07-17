@@ -523,7 +523,7 @@ if ($isSingle && count($rows) === 0) {
             <div class="topbar">
                 <h1><?= htmlspecialchars($conf['label']) ?></h1>
                 <?php if (!$isSingle): ?>
-                    <button class="btn" onclick="openAddModal()">+ Tambah Data</button>
+                    <button class="btn" onclick="openAddModal()">+ Tamshdbbah Data</button>
                 <?php endif; ?>
             </div>
 

@@ -6,16 +6,15 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// ===== PUBLIC (landing page) =====
 $routes->get('/', 'Home::index');
+$routes->get('js/content.php', 'SiteContent::index');
 
-// ===== AUTH =====
 $routes->get('/login', 'Auth::login');
 $routes->post('/login/proses', 'Auth::authProcess');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/auth/registerBawaan', 'Auth::registerBawaan'); // hapus baris ini nanti kalau sudah gak perlu
 
-// ===== ADMIN (dikunci filter 'auth') =====
+
 $routes->group('admin', ['filter' => 'auth'], function ($routes) {
     $routes->get('/', 'admin::index');
     $routes->get('(:segment)', 'Admin::index/$1');

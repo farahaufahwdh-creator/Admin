@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin | Kusuma Agrowisata</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= base_url('assets/favicon.svg') ?>">
 
@@ -45,6 +45,7 @@
                 opacity: 0;
                 transform: translateY(12px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
